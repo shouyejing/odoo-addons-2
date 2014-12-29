@@ -25,7 +25,7 @@ from openerp.tools.translate import _
 _logger = logging.getLogger(__name__)
 
 ########################################
-# ENGLISH
+# Turkish
 #########################################
 
 to_19 = ('Sıfır', 'Bir', 'İki', 'Üç', 'Dört', 'Beş', 'Altı',
@@ -40,10 +40,10 @@ denom = ('',
          'Quattuordecillion', 'Sexdecillion', 'Septendecillion',
          'Octodecillion', 'Novemdecillion', 'Vigintillion')
 
-
+# convert a value < 100 to Turkish.
 def _convert_nn(val):
-    """convert a value < 100 to English.
-    """
+    if val == 1:
+        return 'un'
     if val < 20:
         return to_19[val]
     for (dcap, dval) in ((k, 20 + (10 * v)) for (v, k) in enumerate(tens)):
@@ -53,21 +53,26 @@ def _convert_nn(val):
             return dcap
 
 
+# convert a value < 1000 to Turkish, special cased because it is the level that kicks
+# off the < 100 special case.  The rest are more general.  This also allows you to
+# get strings in the form of 'forty-five hundred' if called directly.
 def _convert_nnn(val):
-    """
-        convert a value < 1000 to english, special cased because it is the
-         level that kicks off the < 100 special case.  The rest are more
-         general.  This also allows you to get strings in the form of
-         'forty-five hundred' if called directly.
-    """
     word = ''
     (mod, rem) = (val % 100, val // 100)
-    if rem > 0:
+    if rem == 1:
+        word = 'Yüz '
+    if rem == 2:
+        word = 'İkiyüz '
+    if rem > 2:
         word = to_19[rem] + ' Yüz'
         if mod > 0:
-            word += ' '
-    if mod > 0:
-        word += _convert_nn(mod)
+            word = word + ' '
+    if mod == 1 and rem != 0:
+        word = word + 'unu'
+    if mod == 1 and rem == 0:
+        word = ''
+    if mod > 1:
+        word = word + _convert_nn(mod)
     return word
 
 
@@ -132,7 +137,7 @@ def amount_to_text(nbr, lang='tr', currency='Lira'):
         _logger.warning(_("no translation function found for lang: '%s'"),
                         lang)
         # TODO: (default should be en) same as above
-        lang = 'tr'
+        lang = 'en'
     return _translate_funcs[lang](abs(nbr), currency)
 
 
