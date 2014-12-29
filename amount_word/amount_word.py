@@ -19,15 +19,18 @@
 #
 ##############################################################################
 from openerp.osv import fields, osv
+from openerp.tools.translate import _
+from openerp import pooler, tools
 import amount_to_text_tr
-from amount_to_text_tr import amount_to_text
+
+
 
 
 class account_order(osv.osv):
     _inherit = 'account.invoice'
     _description = "Account invoice"
 
-    def _amount_in_words(self, cr, uid, ids, field_name, arg, context=None):
+    def _amount_in_words(self, cr, uid, ids, field_names=None, arg=False, context=None):
         cur_obj = self.pool.get('res.currency')
         res = {}
         for invoice in self.browse(cr, uid, ids, context=context):
