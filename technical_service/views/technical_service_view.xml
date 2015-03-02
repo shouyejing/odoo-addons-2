@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		
+		<record id="view_repair_service_tree" model="ir.ui.view">
+			<field name="name">Repair Service</field>
+			<field name="model">repair.service</field>
+			<field name="arch" type="xml">
+				<tree string="Repair Services">
+					<field name="partner_id" />
+					<field name="repair_date" />
+					<field name="brand" />
+					<field name="model" />
+					<field name="state" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_repair_service_form" model="ir.ui.view">
+			<field name="name">Repair Service</field>
+			<field name="model">repair.service</field>
+			<field name="arch" type="xml">
+				<form string="Repair Services">
+					<header>
+                        <button name="draft" type="workflow"
+                                string="Reset to draft"
+                                states="confirmed,done,return"/>
+                        <button name="confirm" type="workflow"
+                                string="Confirm" states="draft"
+                                class="oe_highlight"/>
+                        <button name="done" type="workflow"
+                                string="Mark as done" states="confirmed"
+                                class="oe_highlight"/>
+						<button name="return" type="workflow"
+                                string="Mark as Return" states="confirmed"
+                                class="oe_highlight"/>
+                        <field name="state" widget="statusbar"/>
+					</header>
+					<sheet>
+						<div class="oe_title oe_left">
+							<h1>
+								<field name="name" placeholder="Service summary..." class="oe_inline" />
+							</h1>
+						</div>
+						<div class="oe_right oe_button_box" name="buttons">
+							<button type="action" class="oe_stat_button" id="invoice_button"
+								icon="fa-pencil-square-o"
+								name="%(account.action_invoice_tree)d"
+								context="{'search_default_partner_id': partner_id,'default_partner_id': partner_id}"
+								groups="account.group_account_invoice">
+								<div>Invoices</div>
+							</button>
+						</div>
+						<group>
+							<group>
+								<field name="partner_id" />
+								<field name="user_id"
+									options='{"no_open": True}'
+									context="{'default_groups_ref': ['base.group_user', 'base.group_partner_manager']}"/>
+								<field name="reviewer_id"
+									options='{"no_open": True}'
+									context="{'default_groups_ref': ['base.group_user', 'base.group_partner_manager']}"/>
+								<field name="guarantee" />
+
+							</group>
+							<group>
+									<field name="repair_date" />
+									<field name="category" />
+									<field name="brand" />
+									<field name="model" />
+									<field name="serial_no" />
+							</group>
+						</group>
+						<notebook>
+							<page string="Issue" >
+								<field name="issue" placeholder="Add a Issue..."/>
+							</page>
+
+							<page string="Solution" >
+								<field name="solution" placeholder="Add a Solution..."/>
+							</page>
+							<page string="Condition" >
+								<field name="condition" />
+							</page>
+						</notebook>
+						<field name="repair_line">
+							<tree string="Repair Lines" editable="bottom">
+								<field name="product_id" />
+								<field name="quantity" />
+								<field name="price_unit" />
+								<field name="currency_id" options="{'no_create': True}" />
+							</tree>
+						</field>
+					</sheet>
+					<div class="oe_chatter">
+						<field name="message_follower_ids" widget="mail_followers"
+							groups="base.group_user" />
+						<field name="message_ids" widget="mail_thread" placeholder="Share a message..." />
+					</div>
+				</form>
+			</field>
+		</record>
+
+                <!-- calendar view -->
+        <record model="ir.ui.view" id="repair_service_calendar_view">
+            <field name="name">repair.service.calendar</field>
+            <field name="model">repair.service</field>
+			<field name="type">calendar</field>
+            <field name="arch" type="xml">
+                <calendar string="Service Calendar" date_start="repair_date"
+                            color="user_id">
+                    <field name="name"/>
+                </calendar>
+            </field>
+        </record>
+		 <!-- kanban view -->
+        <record model="ir.ui.view" id="view_repair_service_kanban">
+            <field name="name">repair.service.kanban</field>
+            <field name="model">repair.service</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="state">
+                    <field name="color"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div
+                                    t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)}
+                                                  oe_kanban_global_click_edit oe_semantic_html_override
+                                                  oe_kanban_card #{record.group_fancy==1 ? 'oe_kanban_card_fancy' : ''}">
+                                <div class="oe_dropdown_kanban">
+                                    <!-- dropdown menu -->
+                                    <div class="oe_dropdown_toggle">
+                                        <span class="oe_e">#</span>
+                                        <ul class="oe_dropdown_menu">
+                                            <li>
+                                                <a type="delete">Delete</a>
+                                            </li>
+                                            <li>
+                                                <ul class="oe_kanban_colorpicker"
+                                                    data-field="color"/>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="oe_clear"></div>
+                                </div>
+                                <div t-attf-class="oe_kanban_content">
+                                    <!-- title -->
+                                    Partner name:
+                                    <field name="partner_id"/>
+                                    <br/>
+                                    Date:
+                                    <field name="repair_date"/>
+                                    <br/>
+                                    Brand:
+                                    <field name="brand"/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+		
+		<!-- graph view -->
+        <record model="ir.ui.view" id="repair_service_graph_view">
+            <field name="name">repair.service.graph</field>
+            <field name="model">repair.service</field>
+            <field name="arch" type="xml">
+                <graph string="TechnicalService">
+                    <field name="partner_id"/>
+                    <field name="brand" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+		<record id="view_repair_service_filter" model="ir.ui.view">
+			<field name="name">repair.service.select</field>
+			<field name="model">repair.service</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Search">
+				 <group string="Filter By...">
+                        <filter string="Draft" domain="[('state','=','draft')]"/>
+                        <filter string="Confirm" domain="[('state','=','confirmed')]"/>
+                        <filter string="Done" domain="[('state','=','done')]"/>
+						<filter string="Return" domain="[('state','=','return')]"/>
+                        <separator orientation="vertical"/>
+						<field name="partner_id" />
+                    </group>
+
+					<newline />
+					<group expand="1" string="Group By...">
+						<filter string="Partner" name="partner" context="{'group_by':'partner_id'}" />
+						<filter string="Category" name="category" context="{'group_by':'category'}" />
+						<filter string="Brand" name="brand" context="{'group_by':'brand'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+
+
+		<record id="action_repair_service" model="ir.actions.act_window">
+			<field name="name">Repair Service</field>
+			<field name="res_model">repair.service</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form,kanban,calendar,graph</field>
+		</record>
+
+				<!-- top level menu: no paret -->
+		<menuitem name="Repair Service" id="main_menu_repair_service" sequence="10" />
+		        <!-- A first level in the left side menu  -->
+        <menuitem name="Repair Service" id="menu_repair_service" parent="main_menu_repair_service"  sequence="10" />
+
+        <menuitem name="Configuration" id="config_repair_service" parent="main_menu_repair_service"  sequence="20" />
+
+		<menuitem name="Repair" id="menu_repair" parent="menu_repair_service"  action="action_repair_service" />
+
+            <!-- Add Repair Category view -->
+
+        <record id="view_repair_category_tree" model="ir.ui.view">
+			<field name="name">Repair Category</field>
+			<field name="model">repair.category</field>
+			<field name="arch" type="xml">
+				<tree string="repair category">
+					<field name="name" />
+                </tree>
+			</field>
+		</record>
+
+        <record id="view_repair_category_form" model="ir.ui.view">
+			<field name="name">Repair Category</field>
+			<field name="model">repair.category</field>
+			<field name="arch" type="xml">
+		<form string="Repair Category">
+                <field name="name" />
+        </form>
+        	</field>
+		</record>
+
+        <record id="action_repair_category" model="ir.actions.act_window">
+			<field name="name">Repair Category</field>
+			<field name="res_model">repair.category</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="Category" id="menu_category" parent="config_repair_service"  action="action_repair_category" />
+
+                    <!-- Add Repair Category view -->
+
+        <record id="view_repair_brand_tree" model="ir.ui.view">
+			<field name="name">Repair Brand</field>
+			<field name="model">repair.brand</field>
+			<field name="arch" type="xml">
+				<tree string="repair category">
+					<field name="name" />
+                </tree>
+			</field>
+		</record>
+
+        <record id="view_repair_brand_form" model="ir.ui.view">
+			<field name="name">Repair Brand</field>
+			<field name="model">repair.brand</field>
+			<field name="arch" type="xml">
+		<form string="Repair Brand">
+                <field name="name" />
+        </form>
+        	</field>
+		</record>
+
+        <record id="action_repair_brand" model="ir.actions.act_window">
+			<field name="name">Repair Brand</field>
+			<field name="res_model">repair.brand</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="Brand" id="menu_brand" parent="config_repair_service"  action="action_repair_brand" />
+		
+		 <!-- Add Service Condition view -->
+		<record id="view_service_condition_tree" model="ir.ui.view">
+			<field name="name">Service Condition</field>
+			<field name="model">service.condition</field>
+			<field name="arch" type="xml">
+				<tree string="Service Condition">
+					<field name="name" />
+                </tree>
+			</field>
+		</record>
+
+        <record id="view_service_condition_form" model="ir.ui.view">
+			<field name="name">Service Condition</field>
+			<field name="model">service.condition</field>
+			<field name="arch" type="xml">
+		<form string="Service Condition">
+                <field name="name" widget="html" nolabel="1" />
+        </form>
+        	</field>
+		</record>
+
+        <record id="action_service_condition" model="ir.actions.act_window">
+			<field name="name">Service Condition</field>
+			<field name="res_model">service.condition</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="Condition" id="menu_condition" parent="config_repair_service"  action="action_service_condition" />
+
+
+	</data>
+</openerp>

@@ -1,0 +1,11 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_repair_service_line_user,access_repair_service_line,model_repair_service_line,base.group_sale_salesman,1,1,1,0
+access_repair_service_user,access_repair_service,model_repair_service,base.group_sale_salesman,1,1,1,0
+access_repair_service_line_manager,access_repair_service_line,model_repair_service_line,base.group_sale_manager,1,1,1,1
+access_repair_service_manager,access_repair_service,model_repair_service,base.group_sale_manager,1,1,1,1
+access_repair_service_line_public,access_repair_service_line,model_repair_service_line,,1,0,0,0
+access_repair_service_public,access_repair_service,model_repair_service,,1,0,0,0
+access_repair_category_user,access_repair_category,model_repair_category,base.group_sale_salesman,1,1,1,0
+access_repair_category_manager,access_repair_category,model_repair_category,base.group_sale_manager,1,1,1,1
+access_repair_brand_user,access_repair_brand,model_repair_brand,base.group_sale_salesman,1,1,1,0
+access_repair_brand_manager,access_repair_brand,model_repair_brand,base.group_sale_manager,1,1,1,1

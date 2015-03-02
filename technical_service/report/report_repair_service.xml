@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<template id="report_repair_service_document">
+			<t t-call="report.html_container">
+				<t t-foreach="docs" t-as="o">
+					<t t-call="report.external_layout">
+						<div class="page">
+							
+							<div class="oe_structure"/>
+							<div class="row">
+							
+								<div class="col-xs-5 col-xs-offset-7">
+									<address t-field="o.partner_id"
+										t-field-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}' />
+														
+								</div>
+							</div>
+						
+							
+							
+								<h2>Subject : <span t-field="o.display_name"/></h2>
+							
+						
+
+							<div class="row mt32 mb32">
+								<div class="col-xs-3" t-if="o.serial_no">
+									<strong>Serial No</strong>
+									<p t-field="o.serial_no"/>
+								</div>
+								<div class="col-xs-3" t-if="o.repair_date">
+									<strong>Service Date</strong>
+									<p t-field="o.repair_date"/>
+								</div>	
+								
+
+								<div class="col-xs-3" t-if="o.brand">
+									<strong>Brand </strong>
+									<p t-field="o.brand"/>
+								</div>
+								<div class="col-xs-3" t-if="o.model">
+									<strong>Model No</strong>
+									<p t-field="o.model"/>
+								</div>
+								<div class="col-xs-3" t-if="o.guarantee">
+									<strong>Guarantee</strong>
+									<p t-field="o.guarantee"/>
+								</div>   
+							</div>
+							<div class="oe_structure"/>	
+							<div class="row">
+								<div class="col-md-8" t-if="o.issue">
+									<strong>İssue</strong>
+									<p t-field="o.issue"/>
+								</div>
+							</div>
+							
+						<div class="oe_structure"/>	
+							
+					<p style="margin-left:45pt; text-align:center"><strong><span style="font-size:18px"><u>General Terms and Appliance Repair Contract</u></span></strong></p>
+					
+					<p style="margin-left:45pt"><strong>1-) </strong>Garanti dışı arızalı ürünlerin değişimi veya arıza giderilmesi, müşteri onayından sonra yapılır.</p>
+					<p style="margin-left:45pt"><strong>2-) </strong> Arızalı cihaz tamir süreci, tamir öncesi fiyat teklifimizi onaylayarak, tarafımıza ilettikten sonra gerçekleşecektir..</p>
+					<p style="margin-left:45pt"><strong>3-) </strong>Arızalı ürünler üzerinde yer alan yazılımların lisanları ile ilgili sorumluluk tamamen müşterilerimize aittir..</p>
+					<p style="margin-left:45pt"><strong>4-) </strong>Gönderilen Arızalı cihazın kargo ve paketleme işlemlerinden tamamen müşterilerimiz sorumludur.</p>
+					<p style="margin-left:45pt"><strong>5-)</strong>Teknik servisimize bırakılan ürünlerin 30 Gün içerisinde teslim alınması gerekmektedir. Zamanında teslim alınmayan </p>
+					<p style="margin-left:45pt">Ürünler için hiçbir hak talep edilemez</p>
+					<p style="margin-left:45pt"><strong>6-) </strong>Ürün teslimi “Teknik Servis Formu”  ile yapılır.</p>
+					<p style="margin-left:45pt"><strong>7-) </strong>Değiştirilerek yenisi takılan ürünler 3ay firmamız garantisindedir. </p>
+					<p style="margin-left:45pt"><strong>8-)  Arızalı cihazınzın tamir garanti süresi 3 aydır.</strong></p>
+					<p style="margin-left:45pt"><strong>9-) </strong>Fiyatlarımıza K.D.V.  dâhil değildir.</p>
+
+							<!--	
+							<table class="table table-condensed">
+								<thead>
+									<tr>
+										<th>Description</th>
+										<th>Quantity</th>
+										<th class="text-right">Unit Price</th>
+										<th class="text-right" groups="sale.group_discount_per_so_line">Discount (%)</th>
+										<th class="text-right">Taxes</th>
+										<th class="text-right">Amount</th>
+									</tr>
+								</thead>
+							  -->   
+							
+						</div>
+					</t>
+				</t>
+			</t>
+			
+
+		</template>
+		
+			<template id="report_repair_service">
+				<t t-call="report.html_container">
+					<t t-foreach="doc_ids" t-as="doc_id">
+						<t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'technical_service.report_repair_service_document')"/>
+					</t>
+				</t>
+			</template>
+
+	</data>
+</openerp>

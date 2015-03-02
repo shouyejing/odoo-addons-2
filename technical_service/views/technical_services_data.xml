@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+					<!-- Category data -->
+		<record id="repair_category_type_1" model="repair.category">
+            <field name="name">Notebook</field>
+        </record>
+		
+		<record id="repair_category_type_2" model="repair.category">
+            <field name="name">Tablet</field>
+        </record>
+		
+		<record id="repair_category_type_3" model="repair.category">
+            <field name="name">Phone</field>
+        </record>
+		
+		<record id="repair_category_type_4" model="repair.category">
+            <field name="name">PC</field>
+        </record>
+		
+		<record id="repair_category_type_5" model="repair.category">
+            <field name="name">Hardisk</field>
+        </record>
+		
+		<record id="repair_category_type_6" model="repair.category">
+            <field name="name">Television</field>
+        </record>
+		
+		<record id="repair_category_type_7" model="repair.category">
+            <field name="name">Display</field>
+        </record>
+					<!-- Brand data -->
+		<record id="repair_brand_type_1" model="repair.brand">
+            <field name="name">HP</field>
+        </record>
+		
+		<record id="repair_brand_type_2" model="repair.brand">
+            <field name="name">Dell</field>
+        </record>
+		
+		<record id="repair_brand_type_3" model="repair.brand">
+            <field name="name">Toshiba</field>
+        </record>
+		
+		<record id="repair_brand_type_4" model="repair.brand">
+            <field name="name">Sony</field>
+        </record>
+		
+		<record id="repair_brand_type_5" model="repair.brand">
+            <field name="name">Lenovo</field>
+        </record>
+		
+		<record id="repair_brand_type_6" model="repair.brand">
+            <field name="name">Apple</field>
+        </record>
+		
+		<record id="repair_brand_type_7" model="repair.brand">
+            <field name="name">MSI</field>
+        </record>
+		
+		<record id="repair_brand_type_8" model="repair.brand">
+            <field name="name">Asus</field>
+        </record>
+		
+		<record id="repair_brand_type_9" model="repair.brand">
+            <field name="name">Acer</field>
+        </record>
+		
+		<record id="repair_brand_type_10" model="repair.brand">
+            <field name="name">Samsug</field>
+        </record>
+		
+		
+
+    </data>
+</openerp>

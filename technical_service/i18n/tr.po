@@ -1,0 +1,432 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* technical_service
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0-20150220\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-01 15:15+0000\n"
+"PO-Revision-Date: 2015-03-01 15:15+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: technical_service
+#: view:repair.service:technical_service.view_repair_service_form
+msgid "Add a Issue..."
+msgstr "Sorunu ekle ..."
+
+#. module: technical_service
+#: view:repair.service:technical_service.view_repair_service_form
+msgid "Add a Solution..."
+msgstr "Çözüm ekle ..."
+
+#. module: technical_service
+#: field:repair.service,user_id:0
+msgid "Assigned to"
+msgstr "Atanan"
+
+#. module: technical_service
+#: model:ir.ui.menu,name:technical_service.menu_brand
+#: field:repair.brand,name:0
+#: view:repair.service:technical_service.view_repair_service_filter
+#: field:repair.service,brand:0
+#: view:website:technical_service.report_repair_service_document
+msgid "Brand"
+msgstr "Marka"
+
+#. module: technical_service
+#: view:repair.service:technical_service.view_repair_service_kanban
+msgid "Brand:"
+msgstr "Marka:"
+
+#. module: technical_service
+#: model:ir.ui.menu,name:technical_service.menu_category
+#: field:repair.category,name:0
+#: view:repair.service:technical_service.view_repair_service_filter
+#: field:repair.service,category:0
+msgid "Category"
+msgstr "Kategori"
+
+#. module: technical_service
+#: field:repair.service,color:0
+msgid "Color"
+msgstr "Renk"
+
+#. module: technical_service
+#: model:ir.ui.menu,name:technical_service.menu_condition
+#: view:repair.service:technical_service.view_repair_service_form
+#: field:repair.service,condition:0
+#: field:service.condition,name:0
+msgid "Condition"
+msgstr "Koşullar"
+
+#. module: technical_service
+#: model:ir.ui.menu,name:technical_service.config_repair_service
+msgid "Configuration"
+msgstr "Konfigrasyon"
+
+#. module: technical_service
+#: view:repair.service:technical_service.view_repair_service_filter
+#: view:repair.service:technical_service.view_repair_service_form
+msgid "Confirm"
+msgstr "Onaylama"
+
+#. module: technical_service
+#: selection:repair.service,state:0
+msgid "Confirmed"
+msgstr "Doğrulama"
+
+#. module: technical_service
+#: field:repair.brand,create_uid:0
+#: field:repair.category,create_uid:0
+#: field:repair.service,create_uid:0
+#: field:repair.service.line,create_uid:0
+#: field:service.condition,create_uid:0
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: technical_service
+#: field:repair.brand,create_date:0
+#: field:repair.category,create_date:0
+#: field:repair.service,create_date:0
+#: field:repair.service.line,create_date:0
+#: field:service.condition,create_date:0
+msgid "Created on"
+msgstr "Oluşturulma"
+
+#. module: technical_service
+#: field:repair.service.line,currency_id:0
+msgid "Currency"
+msgstr "Para Birmi"
+
+#. module: technical_service
+#: help:repair.service,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr "Date of the last message posted on the record."
+
+#. module: technical_service
+#: view:repair.service:technical_service.view_repair_service_kanban
+msgid "Date:"
+msgstr "Date:"
+
+#. module: technical_service
+#: view:repair.service:technical_service.view_repair_service_kanban
+msgid "Delete"
+msgstr "Sil"
+
+#. module: technical_service
+#: view:repair.service:technical_service.view_repair_service_filter
+#: selection:repair.service,state:0
+msgid "Done"
+msgstr "Biten"
+
+#. module: technical_service
+#: view:repair.service:technical_service.view_repair_service_filter
+#: selection:repair.service,state:0
+msgid "Draft"
+msgstr "Yeni"
+
+#. module: technical_service
+#: view:repair.service:technical_service.view_repair_service_filter
+msgid "Filter By..."
+msgstr "Filter By..."
+
+#. module: technical_service
+#: field:repair.service,message_follower_ids:0
+msgid "Followers"
+msgstr "İzleyiciler"
+
+#. module: technical_service
+#: view:website:technical_service.report_repair_service_document
+msgid "General Terms and Appliance Repair Contract"
+msgstr "Genel Şartlar ve Cihaz Tamir Sözleşmesi"
+
+#. module: technical_service
+#: view:repair.service:technical_service.view_repair_service_filter
+msgid "Group By..."
+msgstr "Group By..."
+
+#. module: technical_service
+#: field:repair.service,guarantee:0
+#: view:website:technical_service.report_repair_service_document
+msgid "Guarantee"
+msgstr "Garanti"
+
+#. module: technical_service
+#: help:repair.service,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+
+#. module: technical_service
+#: field:repair.brand,id:0
+#: field:repair.category,id:0
+#: field:repair.service,id:0
+#: field:repair.service.line,id:0
+#: field:service.condition,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: technical_service
+#: help:repair.service,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "If checked new messages require your attention."
+
+#. module: technical_service
+#: view:repair.service:technical_service.view_repair_service_form
+msgid "Invoices"
+msgstr "Faturalar"
+
+#. module: technical_service
+#: field:repair.service,message_is_follower:0
+msgid "Is a Follower"
+msgstr "Bir Takipçisi mi"
+
+#. module: technical_service
+#: view:repair.service:technical_service.view_repair_service_form
+#: field:repair.service,issue:0
+msgid "Issue"
+msgstr "Sorun"
+
+#. module: technical_service
+#: field:repair.service,message_last_post:0
+msgid "Last Message Date"
+msgstr "Son Mesaj Tarihi"
+
+#. module: technical_service
+#: field:repair.brand,write_uid:0
+#: field:repair.category,write_uid:0
+#: field:repair.service,write_uid:0
+#: field:repair.service.line,write_uid:0
+#: field:service.condition,write_uid:0
+msgid "Last Updated by"
+msgstr "Son Güncelleyen"
+
+#. module: technical_service
+#: field:repair.brand,write_date:0
+#: field:repair.category,write_date:0
+#: field:repair.service,write_date:0
+#: field:repair.service.line,write_date:0
+#: field:service.condition,write_date:0
+msgid "Last Updated on"
+msgstr "Son Güncelleme"
+
+#. module: technical_service
+#: view:repair.service:technical_service.view_repair_service_form
+msgid "Mark as Return"
+msgstr "Mark as Return"
+
+#. module: technical_service
+#: view:repair.service:technical_service.view_repair_service_form
+msgid "Mark as done"
+msgstr "Mark as done"
+
+#. module: technical_service
+#: field:repair.service,message_ids:0
+msgid "Messages"
+msgstr "Mesajlar"
+
+#. module: technical_service
+#: help:repair.service,message_ids:0
+msgid "Messages and communication history"
+msgstr "Mesajlar ve iletişim geçmişi"
+
+#. module: technical_service
+#: field:repair.service,model:0
+#: view:website:technical_service.report_repair_service_document
+msgid "Model No"
+msgstr "Model No"
+
+#. module: technical_service
+#: field:repair.service,name:0
+msgid "Name"
+msgstr "Konu"
+
+#. module: technical_service
+#: view:repair.service:technical_service.view_repair_service_filter
+#: field:repair.service,partner_id:0
+msgid "Partner"
+msgstr "İş Ortağı"
+
+#. module: technical_service
+#: view:repair.service:technical_service.view_repair_service_kanban
+msgid "Partner name:"
+msgstr "Partner name:"
+
+#. module: technical_service
+#: field:repair.service.line,product_id:0
+msgid "Product"
+msgstr "Ürün"
+
+#. module: technical_service
+#: field:repair.service.line,quantity:0
+msgid "Quantity"
+msgstr "Adet"
+
+#. module: technical_service
+#: model:ir.ui.menu,name:technical_service.menu_repair
+msgid "Repair"
+msgstr "Tamir"
+
+#. module: technical_service
+#: model:ir.actions.act_window,name:technical_service.action_repair_brand
+#: model:ir.model,name:technical_service.model_repair_brand
+#: view:repair.brand:technical_service.view_repair_brand_form
+msgid "Repair Brand"
+msgstr "Marka"
+
+#. module: technical_service
+#: model:ir.actions.act_window,name:technical_service.action_repair_category
+#: model:ir.model,name:technical_service.model_repair_category
+#: view:repair.category:technical_service.view_repair_category_form
+msgid "Repair Category"
+msgstr "servis Kategorisi"
+
+#. module: technical_service
+#: view:repair.service:technical_service.view_repair_service_form
+#: field:repair.service,repair_line:0
+msgid "Repair Lines"
+msgstr "Repair Lines"
+
+#. module: technical_service
+#: model:ir.actions.act_window,name:technical_service.action_repair_service
+#: model:ir.model,name:technical_service.model_repair_service
+#: model:ir.ui.menu,name:technical_service.main_menu_repair_service
+#: model:ir.ui.menu,name:technical_service.menu_repair_service
+#: field:repair.service.line,repair_id:0
+msgid "Repair Service"
+msgstr "Repair Service"
+
+#. module: technical_service
+#: view:repair.service:technical_service.view_repair_service_form
+#: view:repair.service:technical_service.view_repair_service_tree
+msgid "Repair Services"
+msgstr "Repair Services"
+
+#. module: technical_service
+#: model:ir.model,name:technical_service.model_repair_service_line
+msgid "Repair Services Line"
+msgstr "Repair Services Line"
+
+#. module: technical_service
+#: view:repair.service:technical_service.view_repair_service_form
+msgid "Reset to draft"
+msgstr "Reset to draft"
+
+#. module: technical_service
+#: view:repair.service:technical_service.view_repair_service_filter
+#: selection:repair.service,state:0
+msgid "Return"
+msgstr "İade"
+
+#. module: technical_service
+#: field:repair.service,reviewer_id:0
+msgid "Reviewer"
+msgstr "Takipci"
+
+#. module: technical_service
+#: view:repair.service:technical_service.view_repair_service_filter
+msgid "Search"
+msgstr "Arma"
+
+#. module: technical_service
+#: field:repair.service,serial_no:0
+#: view:website:technical_service.report_repair_service_document
+msgid "Serial No"
+msgstr "Seri No"
+
+#. module: technical_service
+#: view:repair.service:technical_service.repair_service_calendar_view
+msgid "Service Calendar"
+msgstr "Servis Tarihi"
+
+#. module: technical_service
+#: model:ir.actions.act_window,name:technical_service.action_service_condition
+#: model:ir.model,name:technical_service.model_service_condition
+#: view:service.condition:technical_service.view_service_condition_form
+#: view:service.condition:technical_service.view_service_condition_tree
+msgid "Service Condition"
+msgstr "Servis Koşulları"
+
+#. module: technical_service
+#: field:repair.service,repair_date:0
+#: view:website:technical_service.report_repair_service_document
+msgid "Service Date"
+msgstr "Servis Tarihi"
+
+#. module: technical_service
+#: model:ir.actions.report.xml,name:technical_service.action_report_repair_service
+msgid "Service Report"
+msgstr "Servis Raporu"
+
+#. module: technical_service
+#: view:repair.service:technical_service.view_repair_service_form
+msgid "Service summary..."
+msgstr "Servis Özeti"
+
+#. module: technical_service
+#: view:repair.service:technical_service.view_repair_service_form
+msgid "Share a message..."
+msgstr "Mesajı paylaşın ..."
+
+#. module: technical_service
+#: view:repair.service:technical_service.view_repair_service_form
+#: field:repair.service,solution:0
+msgid "Solution"
+msgstr "Çözüm"
+
+#. module: technical_service
+#: field:repair.service,state:0
+msgid "State"
+msgstr "Durumu"
+
+#. module: technical_service
+#: view:website:technical_service.report_repair_service_document
+msgid "Subject :"
+msgstr "Konu :"
+
+#. module: technical_service
+#: field:repair.service,message_summary:0
+msgid "Summary"
+msgstr "Özet"
+
+#. module: technical_service
+#: view:repair.service:technical_service.repair_service_graph_view
+msgid "TechnicalService"
+msgstr "TechnicalService"
+
+#. module: technical_service
+#: field:repair.service.line,price_unit:0
+msgid "Unit Price"
+msgstr "Birim Fiyatı"
+
+#. module: technical_service
+#: field:repair.service,message_unread:0
+msgid "Unread Messages"
+msgstr "Okunmamış Mesajlar"
+
+#. module: technical_service
+#: field:repair.service,website_message_ids:0
+msgid "Website Messages"
+msgstr "Website Messages"
+
+#. module: technical_service
+#: help:repair.service,website_message_ids:0
+msgid "Website communication history"
+msgstr "Web Sitesi iletişim geçmişi"
+
+#. module: technical_service
+#: view:repair.brand:technical_service.view_repair_brand_tree
+#: view:repair.category:technical_service.view_repair_category_tree
+msgid "repair category"
+msgstr "Onarım kategorisi"
+
+#. module: technical_service
+#: view:website:technical_service.report_repair_service_document
+msgid "İssue"
+msgstr "Sorun Açıklaması"
+
