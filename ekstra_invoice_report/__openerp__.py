@@ -34,7 +34,7 @@ Adds additonal layout of invoice and button under Print drop down option.
 
     'author': 'Softteknik',
     'website': 'http://www.softteknik.com',
-    'depends': ['account', 'report', 'amount_word'],
+    'depends': ['account', 'report', 'amount_word_tr'],
     'category': 'Account',
     'data': [
         'partner_view.xml',
