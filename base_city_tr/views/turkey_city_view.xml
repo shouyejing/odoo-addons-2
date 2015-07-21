@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+
+		<record id="view_city_turkey_form" model="ir.ui.view">
+			<field name="name">city.turkey.form</field>
+			<field name="model">city.turkey</field>
+			<field name="arch" type="xml">
+				<form string="City">
+					<field name="kod" />
+					<field name="city_turkey" />
+					<field name="district_turkey" select="1" />
+					<field name="country_id" select="1" /> 
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_city_turkey_tree">
+			<field name="name">city.turkey.tree</field>
+			<field name="model">city.turkey</field>
+			<field name="arch" type="xml">
+				<tree string="Cities">
+					<field name="kod" />
+					<field name="city_turkey" />
+					<field name="district_turkey" />
+					<field name="country_id" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_city_turkey">
+			<field name="name">City</field>
+			<field name="res_model">city.turkey</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem action="action_city_turkey" id="menu_city_turkey"
+			parent="base.menu_localisation" sequence="3" />
+
+		<record id="view_partner_city_turkey_form" model="ir.ui.view" >
+			<field name="name">res.partner.form.city.turkey</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_partner_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='city']"	position="before">
+					<field name="city_id" on_change="on_change_city_id(city_id)" placeholder="City Search" />
+				</xpath>
+			</field>
+		</record> 
+
+	</data>
+</openerp>
