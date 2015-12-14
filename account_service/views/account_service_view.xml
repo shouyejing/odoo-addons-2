@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		
+		<record id="view_account_service_tree" model="ir.ui.view">
+			<field name="name">Account Information</field>
+			<field name="model">account.service</field>
+			<field name="arch" type="xml">
+				<tree string="Account Informations">
+					<field name="partner_id"/>
+					<field name="user_id"/>
+					<field name="start_date"/>
+					<field name="end_date"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_account_service_form" model="ir.ui.view">
+			<field name="name">Account Information</field>
+			<field name="model">account.service</field>
+			<field name="arch" type="xml">
+				<form string="Account Information">
+					<header>
+                        <button name="open" type="workflow"
+                                string="Open"
+                                states="closed"/>
+                        <button name="closed" type="workflow"
+                                string="Closed" states="closed"
+                                class="oe_highlight"/>
+                        <field name="state" widget="statusbar"/>
+					</header>
+					<sheet>
+						<div class="oe_title oe_left">
+							<h1>
+								<field name="name" placeholder="Service summary..." class="oe_inline"/>
+							</h1>
+						</div>
+						<group col="2">
+							<group>
+								<field name="partner_id"/>
+								<field name="user_id"/>
+							</group>
+							<group>
+								<field name="start_date"/>
+								<field name="end_date"/>
+							</group>
+						</group>
+						<group string="Accounts">
+							<field name="account_service_ids" widget="one2many" nolabel="1">
+								<tree editable='bottom' >
+									<field name="service_name_id"/>
+									<field name="name"/>
+									<field name="password"/>
+									<field name="host_name"/>
+									<field name="date"/>
+								</tree>
+							</field>
+						</group>
+						
+					</sheet>
+					<div class="oe_chatter">
+						<field name="message_follower_ids" widget="mail_followers" groups="base.group_user" />
+						<field name="message_ids" widget="mail_thread" placeholder="Share a message..." />
+					</div>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_account_service_search" model="ir.ui.view">
+			<field name="name">Account Information</field>
+			<field name="model">account.service</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Search">
+					<field name="partner_id"/>
+				</search>
+			</field>
+		</record>
+
+		<record id="action_account_service" model="ir.actions.act_window">
+			<field name="name">Account Information</field>
+			<field name="res_model">account.service</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+				<!-- A first level in the left side menu  -->
+		<menuitem name="Account Information" id="main_menu_account_service" parent="base.menu_base_partner" sequence="3" /> 
+		        <!-- A second level in the left side menu  -->
+        <menuitem name="Account Information" id="menu_account_service" parent="main_menu_account_service"  sequence="1"  action="action_account_service"/>
+ 
+            <!-- Add Service Name View -->
+
+        <record id="view_service_name_tree" model="ir.ui.view">
+			<field name="name">Service Name</field>
+			<field name="model">service.name</field>
+			<field name="arch" type="xml">
+				<tree string="Service Name">
+					<field name="name"/>
+                </tree>
+			</field>
+		</record>
+
+        <record id="view_service_name_form" model="ir.ui.view">
+			<field name="name">Service Name</field>
+			<field name="model">service.name</field>
+			<field name="arch" type="xml">
+				<form string="Service Name">
+					<field name="name"/>
+				</form>
+        	</field>
+		</record>
+
+        <record id="action_service_name_category" model="ir.actions.act_window">
+			<field name="name">Service Name</field>
+			<field name="res_model">service.name</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+				<!-- Configuration in the left side menu  -->
+		<menuitem name="Service Name" id="service_name_category" parent="base.menu_base_config"  sequence="10" action="action_service_name_category" />
+
+
+	</data>
+</openerp>

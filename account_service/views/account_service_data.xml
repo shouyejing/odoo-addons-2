@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+					<!-- Service Name -->
+		<record id="service_name_type_1" model="service.name">
+            <field name="name">MailServer</field>
+        </record>
+		<record id="service_name_type_2" model="service.name">
+            <field name="name">VPS Hosting</field>
+        </record>
+		<record id="service_name_type_3" model="service.name">
+            <field name="name">FireWall</field>
+        </record>
+		<record id="service_name_type_3" model="service.name">
+            <field name="name">Local Ubuntu 14.04</field>
+        </record>
+		<record id="service_name_type_4" model="service.name">
+            <field name="name">Zimbra 8.6</field>
+        </record>
+		
+    </data>
+</openerp>
