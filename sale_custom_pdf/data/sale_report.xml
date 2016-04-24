@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="sale_custom_pdf.sale_order_layout" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="sale_custom_paperformat" />
+            <!-- <field name="attachment">(object.state in ('open','paid')) and ((object.number or '').replace('/','')+'.pdf')</field> -->
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="sale_another_layout">
+            <t t-call="sale_custom_pdf.sale_report_layout">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <!-- SECOND ROW -->
+                        <div class="row">
+                            <div class="col-xs-8" style="border-left: 6px solid #6ED0F7; ">>
+                                <!-- 	<div class="cutomer" style="border-left: 6px solid #6ED0F7; "> -->
+                                <strong>
+                                    <span t-field="o.partner_id.name"/>
+                                </strong>
+                                <br/>
+                                <span t-field="o.partner_id.street"/>
+                                <br/>
+                                <span t-field="o.partner_id.street2"/>
+                                <br/>
+                                <span t-field="o.partner_id.city"/>
+                                <br/>
+                                <br/>
+                                <strong>Dear:
+                                    <span t-field="o.contact_id.name"/>
+                                </strong>
+                                <br/>
+                                <!-- </div> -->
+                            </div>
+
+
+                            <div class="col-xs-2"
+                                 style="background-color:#6ED0F7; border-radius: 5px; box-shadow: 0 3px 2px rgba(0,0,0,0.15) , 0 0 1px rgba(0,0,0,0.15); border-right: 2px solid #FF0000; text-align: right;">
+
+                                <strong>Quotation No:</strong>
+                                <br/>
+                                <strong>Quotation Date:</strong>
+                                <br/>
+                                <strong>Time:</strong>
+                                <br/>
+                                <strong>Salesperson:</strong>
+                                <strong>Expiry Date:</strong>
+                            </div>
+                            <div class="col-xs-2"
+                                 style="background-color:#CAD2D5; border-radius: 5px; box-shadow: 0 3px 2px rgba(0,0,0,0.15) , 0 0 1px rgba(0,0,0,0.15);">
+                                <span t-field="o.name"/>
+                                <br/>
+                                <span t-field="o.date_order"/>
+                                <br/>
+                                <span t-field="o.user_id.name"/>
+                                <br/>
+                                <span t-field="o.payment_term"/>
+                                <span t-field="o.validity_date"/>
+                            </div>
+                        </div>
+                        <div class="oe_structure"/>
+                        <!-- THIRD ROW -->
+                        <div class="row mt16 mb16" style="text-align:center; margin-top:10px; color:red;">
+                            <h2>Quotations</h2>
+                            <br/>
+                        </div>
+                        <span>
+                            <span t-field="o.note1"/>
+                        </span>
+                        <br/>
+                        <div class="oe_structure"/>
+
+                        <table style="font-size:16px; margin-top:10px;">
+                            <thead>
+                                <tr>
+                                    <th class="text-left" width="50%" style=" ">Product and Service</th>
+                                    <th class="text-center" width="10%" style=" ">QTY</th>
+                                    <th class="text-center" width="10%">UOM</th>
+                                    <th class="text-right" width="15%">Unit Price</th>
+                                    <th class="text-righ" width="15%">Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="o.order_line" t-as="line">
+                                    <td class="text-left">
+                                        <span t-field="line.name"/>
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-field="line.product_uom_qty"/>
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-esc="line.product_uom.name"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="line.price_unit"/>
+                                    </td>
+                                    <td class="text-righ">
+                                        <span t-field="line.price_subtotal"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="row">
+                            <div class="col-xs-4 pull-right">
+                                <table class="table table-condensed">
+                                    <tr class="border-black">
+                                        <td style="background-color:#6ED0F7; border-right: 2px solid #FFFFFF;">
+                                            <strong>Total Without Taxes <![CDATA[&nbsp;]]></strong>
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-field="o.amount_untaxed"
+                                                  t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-black">
+                                        <td style="background-color:#6ED0F7; border-right: 2px solid #FFFFFF;">
+                                            <strong>Taxes <![CDATA[&nbsp;]]></strong>
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-field="o.amount_tax"
+                                                  t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-black">
+                                        <td style="background-color:#6ED0F7; border-right: 2px solid #FFFFFF;">
+                                            <strong>Total <![CDATA[&nbsp;]]></strong>
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-field="o.amount_total"
+                                                  t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <p t-field="o.note"/>
+
+                        <div class="row" style="font-size:14px;">
+                            <div class="col-xs-12">
+                                <strong>REMARKS:</strong>
+                                <br/>
+                                <span t-field="o.note2"/>
+                                <br/>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+        <template id="sale_order_layout">
+            <t t-call="report.html_container">
+                <t t-foreach="doc_ids" t-as="doc_id">
+                    <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'sale_custom_pdf.sale_another_layout')"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>
