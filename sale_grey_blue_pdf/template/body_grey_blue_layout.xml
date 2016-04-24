@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-        <template id="sale_another_layout">
-            <t t-call="sale_custom_pdf.sale_report_layout">
+        <template id="sale_grey_blue_layout">
+            <t t-call="sale_grey_blue_pdf.sale_report_layout">
                 <t t-foreach="docs" t-as="o">
                     <div class="page">
                         <div class="oe_structure"/>
@@ -161,10 +161,10 @@
                 </t>
             </t>
         </template>
-        <template id="sale_order_layout">
+        <template id="body_grey_blue_layout">
             <t t-call="report.html_container">
                 <t t-foreach="doc_ids" t-as="doc_id">
-                    <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'sale_custom_pdf.sale_another_layout')"/>
+                    <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'sale_grey_blue_pdf.sale_grey_blue_layout')"/>
                 </t>
             </t>
         </template>

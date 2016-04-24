@@ -1,20 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-        <report id="sale_custom_qweb_pdf"
-                string="Custom - Quotation"
-                model="sale.order"
-                report_type="qweb-pdf"
-                file="sale_custom_pdf.sale_another_layout"
-                name="sale_custom_pdf.sale_another_layout"
-                usage="default"/>
-
-        <record id="sale_custom_qweb_pdf" model="ir.actions.report.xml">
-            <field name="paperformat_id" ref="sale_custom_paperformat"/>
-        </record>
-
-
-        <template id="sale_custom_pdf.sale_report_layout">
+	
+		<template id="sale_grey_blue_pdf.sale_report_layout">
             <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'/>
             <style type="text/css">
                 <![CDATA[
@@ -113,6 +101,7 @@ table th.text-righ {
 
                         ]]>
             </style>
+        
             <!-- Multicompany -->
             <t t-if="o and 'company_id' in o">
                 <t t-set="company" t-value="o.company_id"/>
@@ -121,12 +110,12 @@ table th.text-righ {
                 <t t-set="company" t-value="res_company"/>
             </t>
 
-            <t t-call="sale_custom_pdf.sale_layout_header"/>
+            <t t-call="sale_grey_blue_pdf.sale_grey_blue_layout_header"/>
             <t t-raw="0"/>
-            <t t-call="sale_custom_pdf.sale_layout_footer"/>
+            <t t-call="sale_grey_blue_pdf.sale_grey_blue_layout_footer"/>
         </template>
 
-        <template id="sale_layout_header">
+        <template id="sale_grey_blue_layout_header">
             <div class="header">
                 <div class="row">
                     <div class="col-xs-3">
@@ -143,7 +132,7 @@ table th.text-righ {
             </div>
         </template>
 
-        <template id="sale_layout_footer">
+        <template id="sale_grey_blue_layout_footer">
             <div class="footer">
                 <div class="text-center" style="border-top: 2px solid red;">
                     <ul t-if="not company.custom_footer" class="list-inline">

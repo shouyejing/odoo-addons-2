@@ -7,22 +7,22 @@
     'name': 'Sale Quotation Pdf',
     'summary': 'Sale Quotation QWEB PDF',
     'version': '1.0',
+	'license': 'AGPL-3',
     'category': 'Sale',
     'description' : """This module help to print sale quotation reports.""",
     'author': 'Softteknik',
     'website': 'http://www.softteknik.com',
-    'depends': ['sale','website_quote','sale_comment_template'],
+    'depends': ['sale','website_quote','sale_comment_template','quotation_contact'],
     'data': [
             'data/paperformat.xml',
-            # 'data/sale_report.xml',
             'views/report_menu.xml',
-            'views/quotation_view.xml',
-			'template/sale_order_layout.xml',
-            
-            # 'views/sale_order.xml',
+            'template/body_grey_blue_layout.xml',
+			'template/header_footer_layout.xml',
+                        
             ],
     'demo': [],
     'test': [],
     'installable': True,
+	'application': False,
     'auto_install': False,
 }

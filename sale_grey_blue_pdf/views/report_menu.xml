@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report id="sale_grey_blue_qweb"
+                string="Grey/Blue - Quotation"
+                model="sale.order"
+                report_type="qweb-pdf"
+                file="sale_grey_blue_pdf.sale_grey_blue_layout"
+                name="sale_grey_blue_pdf.sale_grey_blue_layout"
+                usage="default"/>
+
+        <record id="sale_grey_blue_qweb" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="sale_grey_blue_paperformat"/>
+        </record>
+
+
+
+    </data>
+</openerp>
