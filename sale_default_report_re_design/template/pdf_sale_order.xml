@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data>
+				<!-- sale.order.report -->
+        <record id="view_sale order_report" model="ir.ui.view">
+            <field name="name">view.sale.order.report</field>
+            <field name="inherit_id" ref="sale.report_saleorder_document"/>
+            <field name="priority" eval="30" />
+            <field name="type">qweb</field>
+            <field name="arch" type="xml"> 
+                <xpath expr="//t/t[@t-call='report.external_layout']" position="replace">
+					<t t-foreach="docs" t-as="o">
+                    <t t-call="sale_default_report_re_design.sale_layout">
+					
+						<div class="page">
+							<div class="oe_structure"/>
+							<!-- SECOND ROW -->
+							<div class="row">
+								<div class="col-xs-8" >
+									<strong><span t-field="o.partner_id.name"/></strong><br/>
+									<span t-field="o.partner_id.street"/><br/>
+									<span t-field="o.partner_id.street2"/><br/>
+									<span t-field="o.partner_id.city"/><br/>
+									<br/>
+										<!-- depends quotation_contact -->
+									<strong>Dear: <span t-field="o.contact_id.name"/></strong><br/>
+								</div>
+								<div class="col-xs-2" >
+									<strong>Quotation No:</strong><br/>
+									<strong>Quotation Date:</strong><br/>
+									<strong>Time:</strong><br/>
+									<strong>Salesperson:</strong>
+									<strong>Expiry Date:</strong>
+								</div>
+								<div class="col-xs-2" >
+									<span t-field="o.name"/><br/>
+									<span t-field="o.date_order"/><br/>
+									<span t-field="o.user_id.name"/><br/>
+									<span t-field="o.payment_term"/>
+									<span t-field="o.validity_date"/>
+								</div>
+							</div>
+							<div class="oe_structure"/>
+							<!-- THIRD ROW -->
+							<div class="row mt16 mb16" style="text-align:center; margin-top:10px; color:red;">
+								<h2>Quotations</h2><br/>
+							</div>
+							<!-- depends sale_comment_template -->
+							<span><span t-field="o.note1"/></span><br/>
+							<div class="oe_structure"/>
+
+							<table class="table table-condensed" style="font-size:16px; margin-top:10px;">
+								<thead style="background-color:#568eff;border: 1px solid #568eff;color:#ffffff;">
+									<tr>
+										<th width="50%" class="text-left">Product and Service</th>
+										<th width="5%" class="text-center">QTY</th>
+										<th width="10%" class="text-center">UOM</th>
+										<th width="15%" class="text-right">Unit Price</th>
+										<th width="5%" class="text-center" groups="sale.group_discount_per_so_line">Disc.(%)</th>
+										<th width="15%" class="text-right">Amount</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr t-foreach="o.order_line" t-as="line">
+										<td class="text-left">
+											<span t-field="line.name"/>
+										</td>
+										<td class="text-center">
+											<span t-field="line.product_uom_qty"/>
+										</td>
+										<td class="text-center">
+											<span t-esc="line.product_uom.name"/>
+										</td>
+										<td class="text-right">
+											<span t-field="line.price_unit"/>
+										</td>
+										<td groups="sale.group_discount_per_so_line">
+											<span t-esc="line.discount"/>
+										</td>
+										<td class="text-right">
+											<span t-field="line.price_subtotal"/>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="row">
+								<div class="col-xs-4 pull-right">
+									<table class="table table-condensed">
+										<tr class="border-black">
+											<td><strong>Total Without Taxes</strong></td>
+											<td class="text-right">
+												<span t-field="o.amount_untaxed"
+													  t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
+											</td>
+										</tr>
+										<tr>
+											<td>Taxes</td>
+											<td class="text-right">
+												<span t-field="o.amount_tax"
+													  t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
+											</td>
+										</tr>
+										<tr class="border-black">
+											<td><strong>Total</strong></td>
+											<td class="text-right">
+												<span t-field="o.amount_total"
+													  t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+							depends sale_comment_template
+							<p t-field="o.note" />
+								<!-- depends sale_comment_template -->
+							<div class="row" style="font-size:14px;">
+								<div class="col-xs-12">
+									<strong>REMARKS:</strong><br/>
+									<span t-field="o.note2"/><br/>
+								</div>
+							</div>
+						</div>
+                        
+                    </t>   
+                    </t>
+                </xpath>
+           </field>
+       </record>
+    </data>
+</openerp>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data>
+        <record id="sale_layout_header" model="ir.ui.view">
+            <field name="name">Sale Layout Header</field>
+            <field name="type">qweb</field>
+            <field name="arch" type="xml">
+                <t t-name="sale_default_report_re_design.sale_layout_header">
+                    <div class="header">
+						<div class="row">
+							<div class="col-xs-3">
+								<img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height: 35px;"/>
+							</div>
+							<div class="col-xs-9 text-right" style="margin-top:20px;" t-field="company.rml_header1"/>
+						</div>
+						<div class="row zero_min_height">
+							<div class="col-xs-12">
+								<div style="border-bottom: 2px solid red;"/>
+							</div>
+						</div>
+					</div>
+                     
+                </t>
+            </field>
+        </record>
+    </data>
+</openerp>

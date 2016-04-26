@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data>
+        <record id="sale_layout" model="ir.ui.view">
+            <field name="name">Sale Layout</field>
+            <field name="type">qweb</field>
+            <field name="arch" type="xml">
+                <t t-name="sale_default_report_re_design.sale_layout">
+                   
+                    <t t-if="o and 'company_id' in o">
+                        <t t-set="company" t-value="o.company_id"/>
+                    </t>
+                    <t t-if="not o or not 'company_id' in o">
+                        <t t-set="company" t-value="res_company"/>
+                    </t>
+
+                    <t t-call="sale_default_report_re_design.sale_layout_header"/>
+                    <t t-raw="0"/>
+                    <t t-call="sale_default_report_re_design.sale_layout_footer"/>
+                </t>
+            </field>
+        </record>
+    </data>
+</openerp>
