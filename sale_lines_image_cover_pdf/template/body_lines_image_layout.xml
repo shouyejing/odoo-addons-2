@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="sale_lines_image_layout">
+			
+		
+            <t t-call="report.html_container">
+			
+                <t t-foreach="docs" t-as="o">
+					<div class="page">
+						<img src="sale_lines_image_cover_pdf/static/src/img/cover.jpg" style=""/>
+					</div>
+                    <div class="page">
+					
+						
+                        <div class="oe_structure"/>
+                        <!-- SECOND ROW -->
+                    <div class="row">
+						<div class="table_header" >
+							
+						<style type="text/css">
+									
+									<![CDATA[ 
+									
+									.table_header {
+										margin:0px;padding:0px;
+										width:100%;
+										box-shadow: 10px 10px 5px #888888;
+										border:1px solid #000000;
+										border-bottom-left-radius:9px;
+										border-bottom-right-radius:9px;
+										border-top-right-radius:9px;
+										border-top-left-radius:9px;
+									}
+									.table_header table{
+										width:100%;
+										height:100%;
+										margin:0px;padding:0px;
+									}
+									.table_header tr:last-child td:last-child {
+										
+										border-bottom-right-radius:9px;
+									}
+									.table_header table tr:first-child td:first-child {
+										
+										border-top-left-radius:9px;
+									}
+									.table_header table tr:first-child td:last-child {
+										
+										border-top-right-radius:9px;
+									}
+									.table_header tr:last-child td:first-child{
+										
+										border-bottom-left-radius:9px;
+									}
+									.table_header tr:hover td{
+										background-color:#82c0ff;
+										background:linear-gradient(bottom, #82c0ff 5%, #56aaff 100%);
+									
+									}
+									.table_header tr:first-child td{
+										background:linear-gradient(bottom, #0069d3 5%, #007fff 100%);	
+										background: linear-gradient(top,#0069d3,007fff);
+										background-color:#0069d3;
+										border:0px solid #000000;
+										text-align:center;
+										border-width:0px 0px 1px 1px;
+										font-size:18px;
+										font-family:Comic Sans MS;
+										font-weight:bold;
+										color:#ffffff;
+									}
+									.table_header_generator tr:first-child:hover td{
+										background:linear-gradient(bottom, #0069d3 5%, #007fff 100%);	
+										background: linear-gradient(top,#0069d3,007fff);
+										background-color:#0069d3;
+									}
+									.table_header tr:first-child td:first-child{
+										border-width:0px 0px 1px 0px;
+									}.
+									table_header tr:first-child td:last-child{
+										border-width:0px 0px 1px 1px;
+									}
+									.table_header td{
+										background:linear-gradient(bottom, #56aaff 5%, #82c0ff 100%);	
+										background: linear-gradient(top,#56aaff,82c0ff);
+										background-color:#56aaff;
+										border:1px solid #000000;
+										border-width:0px 1px 1px 0px;
+										text-align:left;
+										padding:7px;
+										font-size:12px;
+										font-family:Comic Sans MS;
+										font-weight:bold;
+										color:#000000;
+									}
+									.table_header tr:last-child td{
+										border-width:0px 1px 0px 0px;
+									}
+									.table_header tr td:last-child{
+										border-width:0px 0px 1px 0px;
+									}
+									.table_header tr:last-child td:last-child{
+										border-width:0px 0px 0px 0px;
+									}
+													
+									  
+									]]>  
+							</style>
+
+							<table border="1" cellpadding="1" cellspacing="1" style="">
+								<tbody>
+									<tr>
+										<td colspan="4"><strong><span t-field="o.quotation_title"/></strong><br />
+										</td>
+									</tr>
+									<tr>
+										<td><strong>KURUM</strong><br />
+										</td>
+										<td><strong><span t-field="o.partner_id.name"/></strong><br />
+										</td>
+										<td><strong>TARİH</strong><br />
+										</td>
+										<td><strong><span t-field="o.date_order"/></strong><br />
+										</td>
+									</tr>
+									<tr>
+										<td><strong>İLGİLİ</strong><br />
+										</td>
+										<td><strong><span t-field="o.contact_id.name"/></strong><br />
+										</td>
+										<td><strong>REF.NO</strong><br />
+										</td>
+										<td><strong><span t-field="o.name"/></strong><br />
+										</td>
+									</tr>
+									<tr>
+										<td><strong>PROJE</strong><br />
+										</td>
+										<td><strong><span t-field="o.project_id.name"/></strong><br />
+										</td>
+										<td colspan="2" rowspan="4">nn</td>
+									</tr>
+									<tr>
+										<td><strong>MAİL</strong><br />
+										</td>
+										<td><strong>K.tezcan@fabeks.com</strong><br />
+										</td>
+									</tr>
+									<tr>
+										<td><strong>TEL-FAKS</strong><br />
+										</td>
+										<td><strong>01532 263 73 73</strong><br />
+										</td>
+									</tr>
+									<tr>
+										<td><strong>ADRES</strong><br />
+										</td>
+										<td><span t-field="o.partner_id.street"/><span t-field="o.partner_id.street2"/> <span t-field="o.partner_id.city"/></td>
+									</tr>
+								</tbody>
+							</table>
+                        </div>                               
+						</div>
+
+
+                        
+                        <div class="oe_structure"/>
+                        <!-- THIRD ROW -->
+                        <div class="row mt16 mb16" style="text-align:center; margin-top:10px; color:red;">
+                            <h2>Quotations</h2>
+                        </div>
+                        <span>
+							<!-- depends sale_comment_template -->
+                            <span t-field="o.note1"/>
+                        </span>
+                        <br/>
+                        <div class="oe_structure"/>
+
+                        <table id="ver-zebra" width="100%"> 
+							<style type="text/css">
+					
+										<![CDATA[ 
+										<!-- #pattern-style-b -->
+										
+										#ver-zebra
+										{
+											font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+											font-size: 12px;
+											margin: 45px;
+											width: 480px;
+											text-align: left;
+											border-collapse: collapse;
+										}
+										#ver-zebra th
+										{
+											font-size: 14px;
+											font-weight: normal;
+											padding: 12px 15px;
+											border-right: 1px solid #fff;
+											border-left: 1px solid #fff;
+											color: #039;
+										}
+										#ver-zebra td
+										{
+											padding: 8px 15px;
+											border-right: 1px solid #fff;
+											border-left: 1px solid #fff;
+											color: #669;
+										}
+										.vzebra-odd
+										{
+											background: #eff2ff;
+										}
+										.vzebra-even
+										{
+											background: #e8edff;
+										}
+										#ver-zebra #vzebra-product, #ver-zebra #vzebra-qty, #ver-zebra #vzebra-price, #ver-zebra #vzebra-amount
+										{
+											background: #d0dafd;
+											border-bottom: 1px solid #c8d4fd;
+										}
+										#ver-zebra #vzebra-picture, #ver-zebra #vzebra-uom, #ver-zebra #vzebra-uom
+										{
+											background: #dce4ff;
+											border-bottom: 1px solid #d6dfff;
+										}
+										  
+										]]>  
+								</style>
+							<colgroup>
+								<col class="vzebra-odd" />
+								<col class="vzebra-even" />
+								<col class="vzebra-odd" />
+								<col class="vzebra-even" />
+								<col class="vzebra-odd" />
+								<col class="vzebra-even" />
+								<col class="vzebra-odd" />
+							</colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col" id="vzebra-product">Product and Service</th>
+									<th scope="col" id="vzebra-picture" >Picture</th>
+                                    <th scope="col" id="vzebra-qty" >QTY</th>
+                                    <th scope="col" id="vzebra-uom" >UOM</th>
+                                    <th scope="col" id="vzebra-price">Unit Price</th>
+									<th scope="col" id="vzebra-disc"  groups="sale.group_discount_per_so_line">Disc.(%)</th>
+									<th scope="col" id="vzebra-amount" >Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="o.order_line" t-as="line">
+                                    <td class="text-left">
+                                        <span t-field="line.name"/>
+                                    </td>
+									<td class="text-center">
+									   <span t-field="line.product_id.image_small" t-field-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;img-rounded&quot;}"/>
+									   <!-- <img t-if="l.image" t-att-src="'data:image/png;base64,%s' % l.image" style="max-height: 800px;"/> -->
+									</td>
+                                    <td class="text-center">
+                                        <span t-field="line.product_uom_qty"/>
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-esc="line.product_uom.name"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="line.price_unit"/>
+                                    </td>
+									<td groups="sale.group_discount_per_so_line">
+										<span t-field="line.discount"/>
+									</td>
+									
+                                    <td class="text-righ">
+                                        <span t-field="line.price_subtotal" t-field-options='{"widget": "monetary", "display_currency": 			"o.pricelist_id.currency_id"}' />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="row">
+                            <div class="col-xs-4 pull-right">
+                                <table class="table table-condensed">
+                                    <tr class="border-black">
+                                        <td style="background-color:#6ED0F7; border-right: 2px solid #FFFFFF;">
+                                            <strong>Total Without Taxes <![CDATA[&nbsp;]]></strong>
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-field="o.amount_untaxed"
+                                                  t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-black">
+                                        <td style="background-color:#6ED0F7; border-right: 2px solid #FFFFFF;">
+                                            <strong>Taxes <![CDATA[&nbsp;]]></strong>
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-field="o.amount_tax"
+                                                  t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-black">
+                                        <td style="background-color:#6ED0F7; border-right: 2px solid #FFFFFF;">
+                                            <strong>Total <![CDATA[&nbsp;]]></strong>
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-field="o.amount_total"
+                                                  t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <p t-field="o.note"/>
+
+                        <div class="row" style="font-size:14px;">
+                            <div class="col-xs-12">
+                                <strong>REMARKS:</strong>
+                                <br/>
+								<!-- depends sale_comment_template -->
+                                <span t-field="o.note2"/>
+                                <br/>
+                            </div>
+                        </div>
+				
+                    </div>
+                </t>
+				
+            </t>
+			
+        </template>
+        <template id="body_lines_image_layout">
+            <t t-call="report.html_container">
+                <t t-foreach="doc_ids" t-as="doc_id">
+                    <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'sale_lines_image_cover_pdf.sale_lines_image_layout')"/>
+                </t>
+            </t>
+        </template>
+		
+		
+    </data>
+</openerp>

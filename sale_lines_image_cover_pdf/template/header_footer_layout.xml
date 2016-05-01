@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+	
+		<!-- <template id="sale_line_image_pd"> -->
+		<template id="sale_lines_image_css" >
+			<!-- <xpath expr="//style" position="after"> -->
+			<!-- <t t-name="sale_line_image_pdf.sale_lines_image_layout"> -->
+			<!-- <t t-call="sale_lines_image_pdf.sale_lines_image_layout"> -->
+            <!-- <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'/> -->
+				<style type="text/css">
+					 <!-- <t t-call="report.style"/> -->
+				    <![CDATA[ 
+					.body {
+						font-family: 'Droid Sans', Arial, sans-serif;
+						position: relative;
+						background: #FFFFFF;
+						font-size: 15px;
+					}
+
+					<!-- .clearfix:after {
+					  content: "";
+					  display: table;
+					  clear: both;
+					} -->
+
+					.table_header {
+						margin:0px;padding:0px;
+						width:100%;
+						box-shadow: 10px 10px 5px #888888;
+						border:1px solid #000000;
+						border-bottom-left-radius:9px;
+						border-bottom-right-radius:9px;
+						border-top-right-radius:9px;
+						border-top-left-radius:9px;
+					}
+					.table_header table{
+						width:100%;
+						height:100%;
+						margin:0px;padding:0px;
+					}
+					.table_header tr:last-child td:last-child {
+						
+						border-bottom-right-radius:9px;
+					}
+					.table_header table tr:first-child td:first-child {
+						
+						border-top-left-radius:9px;
+					}
+					.table_header table tr:first-child td:last-child {
+						
+						border-top-right-radius:9px;
+					}
+					.table_header tr:last-child td:first-child{
+						
+						border-bottom-left-radius:9px;
+					}
+					.table_header tr:hover td{
+						background-color:#82c0ff;
+						background:-o-linear-gradient(bottom, #82c0ff 5%, #56aaff 100%);
+					
+					}
+					.table_header tr:first-child td{
+						background:-o-linear-gradient(bottom, #0069d3 5%, #007fff 100%);	
+						background: -o-linear-gradient(top,#0069d3,007fff);
+						background-color:#0069d3;
+						border:0px solid #000000;
+						text-align:center;
+						border-width:0px 0px 1px 1px;
+						font-size:18px;
+						font-family:Comic Sans MS;
+						font-weight:bold;
+						color:#ffffff;
+					}
+					.CSSTableGenerator tr:first-child:hover td{
+						background:-o-linear-gradient(bottom, #0069d3 5%, #007fff 100%);	
+						background: -o-linear-gradient(top,#0069d3,007fff);
+						background-color:#0069d3;
+					}
+					.table_header tr:first-child td:first-child{
+						border-width:0px 0px 1px 0px;
+					}.
+					table_header tr:first-child td:last-child{
+						border-width:0px 0px 1px 1px;
+					}
+					.table_header td{
+						background:-o-linear-gradient(bottom, #56aaff 5%, #82c0ff 100%);	
+						background: -o-linear-gradient(top,#56aaff,82c0ff);
+						background-color:#56aaff;
+						border:1px solid #000000;
+						border-width:0px 1px 1px 0px;
+						text-align:left;
+						padding:7px;
+						font-size:12px;
+						font-family:Comic Sans MS;
+						font-weight:bold;
+						color:#000000;
+					}
+					.table_header tr:last-child td{
+						border-width:0px 1px 0px 0px;
+					}
+					.table_header tr td:last-child{
+						border-width:0px 0px 1px 0px;
+					}
+					.table_header tr:last-child td:last-child{
+						border-width:0px 0px 0px 0px;
+					}
+					<!-- #pattern-style-b -->
+					
+					#ver-zebra
+					{
+						font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+						font-size: 12px;
+						margin: 45px;
+						width: 480px;
+						text-align: left;
+						border-collapse: collapse;
+					}
+					#ver-zebra th
+					{
+						font-size: 14px;
+						font-weight: normal;
+						padding: 12px 15px;
+						border-right: 1px solid #fff;
+						border-left: 1px solid #fff;
+						color: #039;
+					}
+					#ver-zebra td
+					{
+						padding: 8px 15px;
+						border-right: 1px solid #fff;
+						border-left: 1px solid #fff;
+						color: #669;
+					}
+					.vzebra-odd
+					{
+						background: #eff2ff;
+					}
+					.vzebra-even
+					{
+						background: #e8edff;
+					}
+					#ver-zebra #vzebra-product, #ver-zebra #vzebra-qty, #ver-zebra #vzebra-price, #ver-zebra #vzebra-amount
+					{
+						background: #d0dafd;
+						border-bottom: 1px solid #c8d4fd;
+					}
+					#ver-zebra #vzebra-picture, #ver-zebra #vzebra-uom, #ver-zebra #vzebra-uom
+					{
+						background: #dce4ff;
+						border-bottom: 1px solid #d6dfff;
+					}
+
+					  
+					]]>  
+				</style>
+				
+			
+			<!-- Multicompany -->
+			<t t-if="o and 'company_id' in o">
+				<t t-set="company" t-value="o.company_id"></t>
+			</t>
+			<t t-if="not o or not 'company_id' in o">
+				<t t-set="company" t-value="res_company"></t>
+			</t>
+
+			<!-- <t t-call="contract_pdf.contract_header" />
+			<t t-raw="0" />
+			<t t-call="contract_pdf.contract_footer" /> -->
+		
+        
+           	<!-- </xpath> -->
+        </template>
+
+    </data>
+</openerp>

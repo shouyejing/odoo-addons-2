@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report id="sale_lines_image_qweb"
+                string="Lines Image"
+                model="sale.order"
+                report_type="qweb-pdf"
+                file="sale_lines_image_cover_pdf.sale_lines_image_layout"
+                name="sale_lines_image_cover_pdf.sale_lines_image_layout"
+                usage="default"/>
+
+        <record id="sale_lines_image_qweb" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="sale_lines_image_paperformat"/>
+        </record>
+
+
+
+    </data>
+</openerp>
