@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+		 <record id="sale_template_form_quote_option" model="ir.ui.view">
+            <field name="name">sale.quote.template.image</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="website_quote.sale_order_form_quote"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//sheet/notebook/page/field[@name='options']/tree/field[@name='product_id']" position="before">
+                        <field name="image_small" widget="image"/>
+                    </xpath>
+                    <xpath expr="//sheet/notebook/page/field[@name='options']/tree/field[@name='price_unit']" position="after">
+                        <field name="currency_id" />
+                    </xpath>
+                </data>
+            </field>
+        </record>
+    </data>
+</openerp>

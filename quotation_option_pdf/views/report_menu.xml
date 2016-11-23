@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report id="quotation_offering_qweb"
+                string="Offering - Quotation"
+                model="sale.order"
+                report_type="qweb-pdf"
+                file="quotation_option_pdf.quotation_offering_layout"
+                name="quotation_option_pdf.quotation_offering_layout"
+                usage="default"/>
+
+        <record id="quotation_offering_qweb" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="quotation_offering_paperformat"/>
+        </record>
+    </data>
+</openerp>

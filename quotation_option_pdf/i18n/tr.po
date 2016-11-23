@@ -1,0 +1,344 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* quotation_option_pdf
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0-20161109\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-19 13:31+0000\n"
+"PO-Revision-Date: 2016-11-19 13:31+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_footer
+msgid "&bull;"
+msgstr "&bull;"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Amount"
+msgstr "Tutar"
+
+#. module: quotation_option_pdf
+#: field:sale.order.option,currency_id:0
+msgid "Currency"
+msgstr "Para Birim"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Dear:"
+msgstr "Sayın:"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Description"
+msgstr "Açıklama"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Disc.(%)"
+msgstr "İnd.(%)"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_footer
+msgid "Email:"
+msgstr "Email:"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Expiry Date:"
+msgstr "Geçerlik Tarihi:"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_footer
+msgid "Fax:"
+msgstr "Faks:"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Image"
+msgstr "Resim"
+
+#. module: quotation_option_pdf
+#: help:sale.order.option,image_small:0
+msgid "Image of the product variant (Small-sized image of product template if false)."
+msgstr "Image of the product variant (Small-sized image of product template if false)."
+
+#. module: quotation_option_pdf
+#: model:ir.actions.report.xml,name:quotation_option_pdf.quotation_offering_qweb
+msgid "Offering - Quotation"
+msgstr "Opsiyonlu -Teklif"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_footer
+msgid "Page:"
+msgstr "Sayfa:"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_footer
+msgid "Phone:"
+msgstr "Telefon:"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Product"
+msgstr "Ürün"
+
+#. module: quotation_option_pdf
+#: field:sale.order.option,image_small:0
+msgid "Product Image"
+msgstr "Ürün Resmi"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Product and Service"
+msgstr "Ürünler ve Hizmetler"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "QTY"
+msgstr "Miktar"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Quotation Date:"
+msgstr "Teklif Tarihi:"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Quotation No:"
+msgstr "Teklif No:"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Quotations"
+msgstr "Teklif"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "REMARKS:"
+msgstr "Şartlar ve Koşullar"
+
+#. module: quotation_option_pdf
+#: model:ir.model,name:quotation_option_pdf.model_sale_order_option
+msgid "Sale Options"
+msgstr "Satış Seçenekleri"
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* quotation_option_pdf
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0-20161109\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-19 13:31+0000\n"
+"PO-Revision-Date: 2016-11-19 13:31+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_footer
+msgid "&bull;"
+msgstr "&bull;"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Amount"
+msgstr "Tutar"
+
+#. module: quotation_option_pdf
+#: field:sale.order.option,currency_id:0
+msgid "Currency"
+msgstr "Currency"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Dear:"
+msgstr "Sayın:"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Description"
+msgstr "Açıklama"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Disc.(%)"
+msgstr "İnd.(%)"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_footer
+msgid "Email:"
+msgstr "Email:"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Expiry Date:"
+msgstr "Geçerlik Tarihi:"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_footer
+msgid "Fax:"
+msgstr "Faks:"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Image"
+msgstr "Resim"
+
+#. module: quotation_option_pdf
+#: help:sale.order.option,image_small:0
+msgid "Image of the product variant (Small-sized image of product template if false)."
+msgstr "Image of the product variant (Small-sized image of product template if false)."
+
+#. module: quotation_option_pdf
+#: model:ir.actions.report.xml,name:quotation_option_pdf.quotation_offering_qweb
+msgid "Offering - Quotation"
+msgstr "Opsiyonlu -Teklif"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_footer
+msgid "Page:"
+msgstr "Sayfa:"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_footer
+msgid "Phone:"
+msgstr "Telefon:"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Product"
+msgstr "Ürün"
+
+#. module: quotation_option_pdf
+#: field:sale.order.option,image_small:0
+msgid "Product Image"
+msgstr "Product Image"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Product and Service"
+msgstr "Ürünler ve Hizmetler"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "QTY"
+msgstr "Miktar"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Quotation Date:"
+msgstr "Teklif Tarihi:"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Quotation No:"
+msgstr "Teklif No:"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Quotations"
+msgstr "Teklif"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "REMARKS:"
+msgstr "Şartlar ve Koşullar"
+
+#. module: quotation_option_pdf
+#: model:ir.model,name:quotation_option_pdf.model_sale_order_option
+msgid "Sale Options"
+msgstr "Satış Seçenekleri"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Salesperson:"
+msgstr "Oluşturan:"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Suggested Products"
+msgstr "Önerilen Ürünler"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Taxes"
+msgstr "KDV"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Total"
+msgstr "Genel Toplam"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Total Without Taxes"
+msgstr "KDV'siz Toplam"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "UOM"
+msgstr "Birim"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Unit Price"
+msgstr "Birim Fiyat"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_footer
+msgid "Website:"
+msgstr "Web sitesi:"
+
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Salesperson:"
+msgstr "Oluşturan:"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Suggested Products"
+msgstr "Önerilen Ürünler"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Taxes"
+msgstr "KDV"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Total"
+msgstr "Genel Toplam"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Total Without Taxes"
+msgstr "KDV'siz Toplam"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "UOM"
+msgstr "Birim"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_layout
+msgid "Unit Price"
+msgstr "Birim Fiyat"
+
+#. module: quotation_option_pdf
+#: view:website:quotation_option_pdf.quotation_offering_footer
+msgid "Website:"
+msgstr "Web sitesi:"
+

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="quotation_offering_layout">
+            <t t-call="quotation_option_pdf.sale_report_layout">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        
+                        <!-- SECOND ROW -->
+                        <div class="row">
+                            <div class="col-xs-6" style="border-left: 6px solid #6ED0F7; ">>
+                                <strong>
+                                    <span t-field="o.partner_id.name"/>
+                                </strong>
+                                <br/>
+                                <span t-field="o.partner_id.street"/>
+                                <br/>
+                                <span t-field="o.partner_id.street2"/>
+                                <br/>
+                                <span t-field="o.partner_id.city"/>
+                                <br/>
+                                <br/>
+								<!-- depends quotation_contact -->
+                                <strong>Dear:
+                                    <span t-field="o.contact_id.name"/>
+                                </strong>
+                                <br/>
+                                <!-- </div> -->
+                            </div>
+                            <div class="col-xs-5 pull-right">
+                                <table class="right-table">
+                                    <tr>
+                                        <td><strong>Quotation No:</strong></td>
+                                        <td ><span t-field="o.name"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td ><strong>Quotation Date:</strong></td>
+                                        <td ><span t-field="o.date_order" t-field-options='{"widget": "date"}'/></td>
+                                    </tr>                                  
+                                    <tr >
+                                        <td ><strong>Salesperson:</strong></td>
+                                        <td ><span t-field="o.user_id.name"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td ><strong>Expiry Date:</strong></td>
+                                        <td ><span t-field="o.validity_date"/></td>
+                                    </tr>
+                                </table>
+                            </div>
+
+
+                        </div>
+                        
+                        <!-- THIRD ROW -->
+                        <div class="row mt16 mb16" style="text-align:center; margin-top:10px; color:red;">
+                            <h2>Quotations</h2>
+                        </div>
+                        <span>
+							<!-- depends sale_comment_template -->
+                            <span t-field="o.note1"/>
+                        </span>
+                        <br/>
+                        
+						
+						<div class="row">
+                        <table class="features-table" >
+                            <thead>
+                                <tr>
+									<t t-if="o.print_image and o.image_sizes in ('image', 'image_medium', 'image_small') ">
+											<th width="10%" valign="middle" class="text-left">Image</th>
+									</t>
+                                    <th  width="50%">Product and Service</th>
+                                    <th  width="10%" >QTY</th>
+                                    <th  width="10%">UOM</th>
+                                    <th  width="15%">Unit Price</th>
+									<th  groups="sale.group_discount_per_so_line">Disc.(%)</th>
+                                    <th  width="15%">Amount</th>
+                                </tr>
+								 
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="o.order_line" t-as="line">
+									<t t-if="o.image_sizes == 'image' and o.print_image ">
+										<td valign="middle" >
+											<span t-field="line.product_id.image" t-field-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;img-rounded&quot;}"/>
+										</td>
+									</t>
+									<t t-if="o.image_sizes == 'image_medium' and o.print_image ">
+										<td valign="middle">
+											<span t-field="line.product_id.image_medium" t-field-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;img-rounded&quot;}"/>
+										</td>
+									</t>
+									<t t-if="o.image_sizes == 'image_small' and o.print_image ">
+										<td>
+											<span t-field="line.product_id.image_small" t-field-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;img-rounded&quot;}"/>
+										</td>
+									</t>
+                                    <td ><span t-field="line.name"/></td>
+                                    <td ><span t-field="line.product_uom_qty"/></td>
+                                    <td ><span t-esc="line.product_uom.name"/></td>
+                                    <td ><span t-field="line.price_unit"/></td>
+									<td groups="sale.group_discount_per_so_line">
+										<span t-field="line.discount"/>
+									</td>
+                                    <td>
+                                        <span t-field="line.price_subtotal" t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}' />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+						</div>
+                        <div class="row">
+                            <div class="col-xs-4 pull-right">
+                                <table class="sums-table">
+                                    <tr>
+                                        <td><strong>Total Without Taxes </strong></td>
+                                        <td><span t-field="o.amount_untaxed"
+                                                  t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
+                                        </td>
+                                    </tr>
+                                    <tr >
+                                        <td><strong>Taxes</strong></td>
+                                        <td>
+                                            <span t-field="o.amount_tax"
+                                                  t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Total</strong></td>
+                                        <td>
+                                            <span t-field="o.amount_total"
+                                                  t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+					<!--Suggested Products-->
+                       
+							<div class="row">
+								<h2>
+									<span>Suggested Products</span>
+								</h2>
+								<table class="optional-table">
+									<thead>
+										<tr >
+											<th valign="middle" width="15%">Image</th>
+										<!-- 	<th width="20%" >Product</th> -->
+											<th width="40%" >Description</th>
+											<th width="10%" >QTY</th>
+											<th width="15%" >Unit Price</th>                                       
+										</tr>
+									</thead>
+									<tbody>
+										<tr t-foreach="docs.options" t-as="opt">
+											<td>
+												<span t-field="opt.image_small" t-field-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;img-rounded&quot;}"/>
+											</td>
+											<!-- <td ><span t-field="opt.product_id.name"/></td> -->
+											<td ><span t-field="opt.name"/></td>
+											<td ><span t-field="opt.quantity"/></td>
+											<td ><span t-field="opt.price_unit"  t-field-options='{"widget": "monetary", "display_currency": "opt.order_id.pricelist_id.currency_id"}'/></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						
+
+                        <p t-field="o.note"/>
+
+                        <div class="row" style="font-size:14px;">
+                            <div class="col-xs-12">
+                                <strong>REMARKS:</strong>
+                                <br/>
+								<!-- depends sale_comment_template -->
+                                <span t-field="o.note2"/>
+                                <br/>
+                            </div>
+                        </div>
+						 <!--<p style="page-break-after:avoid;"/>-->
+                    </div>
+                    <p style="page-break-inside: avoid"/>
+                </t>
+            </t>
+        </template>
+        <template id="body_quotation_offering_layout">
+            <t t-call="report.html_container">
+                <t t-foreach="doc_ids" t-as="doc_id">
+                    <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'quotation_option_pdf.quotation_offering_layout')"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>
